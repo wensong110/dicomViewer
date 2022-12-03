@@ -226,20 +226,11 @@ const definitions = [
           togglable: true,
         },
       },
-      {
-        id: '3D',
-        label: '3D',
-        icon: 'cube',
-        type: TOOLBAR_BUTTON_TYPES.COMMAND,
-        //CustomComponent: VTKMPRToolbarButton,
-        commandName: 'render',
-        context: 'ACTIVE_VIEWPORT::CORNERSTONE',
-      },
     ],
   },
   {
     id: 'Exit2DMPR',
-    label: 'Exit 2D MPR',
+    label: 'Exit',
     icon: 'times',
     //
     type: TOOLBAR_BUTTON_TYPES.COMMAND,

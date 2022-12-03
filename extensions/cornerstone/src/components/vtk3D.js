@@ -237,7 +237,13 @@ class VTKFusionExample extends Component {
 
   async componentDidMount() {
     //const imageIdPromise = createStudyImageIds(url, searchInstanceOptions);
-
+    let estado;
+    estado = 'hidden';
+    const toolbar = Array.from(document.getElementsByClassName('ToolbarRow'));
+    for (let i = 2; i < 8; i++) {
+      let elem = toolbar[0].children[i];
+      elem.style.visibility = estado;
+    }
     this.apis = [];
     //const imageIds = await imageIdPromise;
     let ok = window.Mem;
@@ -365,7 +371,10 @@ class VTKFusionExample extends Component {
       <div className="row">
         <div className="col-xs-12">
           <div>
-            <label htmlFor="select_CT_xfer_fn">
+            <label
+              htmlFor="select_CT_xfer_fn"
+              style={{ color: 'white', marginLeft: '10px' }}
+            >
               CT Transfer Function Preset (for Volume Rendering):{' '}
             </label>
             <select
@@ -378,7 +387,9 @@ class VTKFusionExample extends Component {
           </div>
         </div>
         <div className="col-xs-12">
-          <h5>{progressString}</h5>
+          <h5 style={{ color: 'white', marginLeft: '10px' }}>
+            {progressString}
+          </h5>
         </div>
         <hr />
         <div className="col-xs-12 col-sm-6">

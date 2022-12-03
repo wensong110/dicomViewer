@@ -1,7 +1,5 @@
-import VTK from '../../../../extensions/vtk';
-import VTKSeg from '../../../../extensions/dicom-segmentation';
 window.config = {
-  extensions: [VTK, VTKSeg],
+  extensions: [],
   routerBasename: '/',
   showStudyList: true,
   servers: {

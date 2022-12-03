@@ -23,6 +23,7 @@ import './Viewer.css';
 import StudyPrefetcher from '../components/StudyPrefetcher.js';
 import StudyLoadingMonitor from '../components/StudyLoadingMonitor';
 import { CommandsManager } from '../../../core/src/index.js';
+import { getActiveContexts } from '../store/layout/selectors.js';
 import store from '../store/index.js';
 
 const { studyMetadataManager } = OHIF.utils;

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
+import VTK3D from '../../../extensions/vtk-3d/index';
 
 import {
   SnackbarProvider,
@@ -295,7 +296,7 @@ function _initExtensions(extensions, cornerstoneExtensionConfig, appConfig) {
     requiredExtensions.push(MeasurementsPanel);
   }
 
-  const mergedExtensions = requiredExtensions.concat(extensions);
+  const mergedExtensions = requiredExtensions.concat(extensions).concat(VTK3D);
   extensionManager.registerExtensions(mergedExtensions);
 }
 

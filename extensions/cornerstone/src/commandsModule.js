@@ -23,29 +23,6 @@ const refreshCornerstoneViewports = () => {
 
 const commandsModule = ({ servicesManager }) => {
   const actions = {
-    render: async ({ viewports }) => {
-      const displaySet =
-        viewports.viewportSpecificData[viewports.activeViewportIndex];
-      const viewportProps = [
-        {
-          orientation: {
-            sliceNormal: [0, 0, 1],
-            viewUp: [0, -1, 0],
-          },
-        },
-      ];
-      try {
-        await setMPRLayout(displaySet, viewportProps, 1, 1);
-      } catch (error) {
-        throw new Error(error);
-      }
-      const vistaActivada = Array.from(
-        document.getElementsByClassName('vtk-viewport-handler')
-      );
-      vistaActivada[0].innerHTML = '';
-      ReactDOM.render(<Render3D />, vistaActivada[0]);
-      Render3D.botones(false);
-    },
     rotateViewport: ({ viewports, rotation }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
 
@@ -274,6 +251,13 @@ const commandsModule = ({ servicesManager }) => {
       cornerstone.updateImage(element);
     },
     setCornerstoneLayout: () => {
+      let estado;
+      estado = 'visible';
+      const toolbar = Array.from(document.getElementsByClassName('ToolbarRow'));
+      for (let i = 2; i < 8; i++) {
+        let elem = toolbar[0].children[i];
+        elem.style.visibility = estado;
+      }
       setCornerstoneLayout();
     },
     setWindowLevel: ({ viewports, window, level }) => {
@@ -434,12 +418,6 @@ const commandsModule = ({ servicesManager }) => {
       commandFn: actions.setWindowLevel,
       storeContexts: ['viewports'],
       options: {},
-    },
-    render: {
-      commandFn: actions.render,
-      storeContexts: ['viewports'],
-      options: {},
-      context: 'VIEWER',
     },
   };
 
