@@ -36,6 +36,15 @@ export default {
             ];
             try {
               await setMPRLayout(displaySet, viewportProps, 1, 1);
+              let estado;
+              estado = 'hidden';
+              const toolbar = Array.from(
+                document.getElementsByClassName('ToolbarRow')
+              );
+              for (let i = 2; i < 8; i++) {
+                let elem = toolbar[0].children[i];
+                elem.style.visibility = estado;
+              }
             } catch (error) {
               throw new Error(error);
             }

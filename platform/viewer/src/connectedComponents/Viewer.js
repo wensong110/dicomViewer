@@ -315,33 +315,27 @@ class Viewer extends Component {
     return (
       <>
         {/* HEADER */}
-        <WhiteLabelingContext.Consumer>
+        {/*<WhiteLabelingContext.Consumer>
           {whiteLabeling => (
             <UserManagerContext.Consumer>
               {userManager => (
                 <AppContext.Consumer>
                   {appContext => (
                     <ConnectedHeader
-                      linkText={
-                        appContext.appConfig.showStudyList
-                          ? 'Study List'
-                          : undefined
-                      }
-                      linkPath={
-                        appContext.appConfig.showStudyList ? '/' : undefined
-                      }
+                      linkText={undefined}
+                      linkPath={undefined}
                       userManager={userManager}
                     >
-                      {whiteLabeling &&
+                      {{whiteLabeling &&
                         whiteLabeling.createLogoComponentFn &&
-                        whiteLabeling.createLogoComponentFn(React)}
+                        whiteLabeling.createLogoComponentFn(React)}}
                     </ConnectedHeader>
                   )}
                 </AppContext.Consumer>
               )}
             </UserManagerContext.Consumer>
           )}
-        </WhiteLabelingContext.Consumer>
+                      </WhiteLabelingContext.Consumer> */}
         {/* TOOLBAR */}
         <ErrorBoundaryDialog context="ToolbarRow">
           <ToolbarRow
