@@ -15,7 +15,9 @@ export default function({ eventData, tool, toolGroupId, toolGroup }) {
   const collection = measurementApi.tools[tool.parentTool];
 
   // Stop here if the tool data shall not be persisted (e.g. temp tools)
-  if (!collection) return;
+  if (!collection) {
+    return;
+  }
 
   const measurementIndex = collection.findIndex(
     t => t._id === measurementData._id
@@ -24,7 +26,9 @@ export default function({ eventData, tool, toolGroupId, toolGroup }) {
     measurementIndex > -1 ? collection[measurementIndex] : null;
 
   // Stop here if the measurement is already gone or never existed
-  if (!measurement) return;
+  if (!measurement) {
+    return;
+  }
 
   if (measurement.childToolsCount === 1) {
     // Remove the measurement

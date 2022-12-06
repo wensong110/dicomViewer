@@ -17,14 +17,14 @@ export default function(element, imageId) {
 
   const splitImageId = imageId.split('&frame');
   const frameIndex =
-    splitImageId[1] !== undefined ? Number(splitImageId[1]) : 0;
+    splitImageId[1] !== undefined ? Number(splitImageId[1]) : undefined;
 
-  const imagePath = [
-    StudyInstanceUID,
-    SeriesInstanceUID,
-    SOPInstanceUID,
-    frameIndex,
-  ].join('_');
+  const imagePath =
+    frameIndex === undefined
+      ? [StudyInstanceUID, SeriesInstanceUID, SOPInstanceUID].join('_')
+      : [StudyInstanceUID, SeriesInstanceUID, SOPInstanceUID, frameIndex].join(
+          '_'
+        );
 
   return {
     PatientID,

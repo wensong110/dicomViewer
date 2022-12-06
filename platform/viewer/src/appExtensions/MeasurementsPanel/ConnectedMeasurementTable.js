@@ -238,7 +238,7 @@ const mapStateToProps = state => {
   const activeServer = servers.servers.find(a => a.active === true);
   let saveFunction;
   if (activeServer) {
-    saveFunction = getSaveFunction(activeServer.type);
+    saveFunction = getSaveFunction('local');
   } else {
     saveFunction = getSaveFunction('local');
   }

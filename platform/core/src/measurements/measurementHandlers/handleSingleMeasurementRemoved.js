@@ -20,13 +20,16 @@ export default function handleSingleMeasurementRemoved({
   const collection = measurementApi.tools[toolType];
 
   // Stop here if the tool data shall not be persisted (e.g. temp tools)
-  if (!collection) return;
+  if (!collection) {
+    return;
+  }
 
   const measurementTypeId = measurementApi.toolsGroupsMap[toolType];
   const measurement = collection.find(t => t._id === measurementData._id);
-
   // Stop here if the measurement is already gone or never existed
-  if (!measurement) return;
+  if (!measurement) {
+    return;
+  }
 
   // Remove all the measurements with the given type and number
   const { lesionNamingNumber, timepointId } = measurement;
