@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Render3D from '../cornerstone/src/components/vtk3D';
 import setMPRLayout from '../vtk/src/utils/setMPRLayout';
+import VTKMPRToolbarButton from '../vtk/src/toolbarComponents/VTKMPRToolbarButton';
 export default {
   id: '3d-View',
   getToolbarModule({ servicesManager, commandsManager }) {
@@ -12,7 +13,7 @@ export default {
           label: '3D',
           icon: 'cube',
           type: 'command',
-          //CustomComponent: VTKMPRToolbarButton,
+          CustomComponent: VTKMPRToolbarButton,
           commandName: 'render',
           context: 'ACTIVE_VIEWPORT::CORNERSTONE',
         },

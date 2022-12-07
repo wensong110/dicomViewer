@@ -7,7 +7,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
 import VTK3D from '../../../extensions/vtk-3d/index';
-
 import {
   SnackbarProvider,
   ModalProvider,
@@ -297,6 +296,7 @@ function _initExtensions(extensions, cornerstoneExtensionConfig, appConfig) {
   }
 
   const mergedExtensions = requiredExtensions.concat(extensions).concat(VTK3D);
+  console.log(mergedExtensions)
   extensionManager.registerExtensions(mergedExtensions);
 }
 
