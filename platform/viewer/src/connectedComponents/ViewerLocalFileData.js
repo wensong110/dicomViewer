@@ -18,7 +18,7 @@ const dropZoneLinkDialog = (onDrop, i18n, dir) => {
         <span {...getRootProps()} className="link-dialog">
           {dir ? (
             <span>
-              {i18n('Load folders')}
+              {i18n('加载文件夹')}
               <input
                 {...getInputProps()}
                 webkitdirectory="true"
@@ -27,7 +27,7 @@ const dropZoneLinkDialog = (onDrop, i18n, dir) => {
             </span>
           ) : (
             <span>
-              {i18n('Load files')}
+              {i18n('加载文件')}
               <input {...getInputProps()} />
             </span>
           )}
@@ -40,11 +40,11 @@ const dropZoneLinkDialog = (onDrop, i18n, dir) => {
 const linksDialogMessage = (onDrop, i18n) => {
   return (
     <>
-      {i18n('Or click to ')}
+      {i18n('或者点击')}
       {dropZoneLinkDialog(onDrop, i18n)}
-      {i18n(' or ')}
+      {i18n(' 和 ')}
       {dropZoneLinkDialog(onDrop, i18n, true)}
-      {i18n(' from dialog')}
+      {i18n(' 来打开')}
     </>
   );
 };
@@ -126,13 +126,11 @@ class ViewerLocalFileData extends Component {
               <div className={'drag-drop-instructions'}>
                 <div className={'drag-drop-contents'}>
                   {this.state.loading ? (
-                    <h3>{this.props.t('Loading...')}</h3>
+                    <h3>{this.props.t('加载中...')}</h3>
                   ) : (
                     <>
                       <h3>
-                        {this.props.t(
-                          'Drag and Drop DICOM files here to load them in the Viewer'
-                        )}
+                        {this.props.t('拖拽文件或文件夹到这里来加载它们..')}
                       </h3>
                       <h4>{linksDialogMessage(onDrop, this.props.t)}</h4>
                     </>

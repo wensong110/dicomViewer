@@ -18,7 +18,7 @@ export default {
       menuOptions: [
         {
           icon: 'th-list',
-          label: 'Measurements',
+          label: '测量数据',
           target: 'lesion-tracker-panel',
         },
       ],

@@ -51,7 +51,6 @@ function ImageThumbnail(props) {
     if (!cancelablePromise) {
       return;
     }
-
     setLoading(true);
     cancelablePromise
       .then(response => {
@@ -90,7 +89,7 @@ function ImageThumbnail(props) {
       cornerstone.renderToCanvas(canvasRef.current, image);
       setLoading(false);
     }
-  }, [canvasRef, image, image.imageId]);
+  }, [canvasRef, image, image.imageId, isLoading]);
 
   useEffect(() => {
     if (!image.imageId || image.imageId !== imageId) {

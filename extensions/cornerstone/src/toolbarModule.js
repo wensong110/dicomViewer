@@ -82,7 +82,7 @@ const definitions = [
   },
   {
     id: 'ArrowAnnotate',
-    label: 'Annotate',
+    label: '注解',
     icon: 'measure-non-target',
     //
     type: TOOLBAR_BUTTON_TYPES.SET_TOOL_ACTIVE,
@@ -217,7 +217,7 @@ const definitions = [
       },
       {
         id: 'Download',
-        label: 'Download',
+        label: '下载',
         icon: 'create-screen-capture',
         //
         type: TOOLBAR_BUTTON_TYPES.BUILT_IN,

@@ -74,7 +74,7 @@ export default {
       menuOptions: [
         {
           icon: 'list',
-          label: 'Measurements',
+          label: '测量数据',
           target: 'measurement-panel',
         },
       ],

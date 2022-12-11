@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import { ToolbarButton } from '@ohif/ui';
 
 export class LayoutButton extends Component {
-
   onClick = () => {
-    window.location.href='/local';
+    window.location.href = '/local';
   };
 
   render() {
@@ -13,7 +12,7 @@ export class LayoutButton extends Component {
       <div className="btn-group">
         <ToolbarButton
           isActive={false}
-          label='回到主页'
+          label="回到主页"
           icon="times"
           onClick={this.onClick}
         />
@@ -22,4 +21,24 @@ export class LayoutButton extends Component {
   }
 }
 
+class FileButton extends Component {
+  onClick = () => {
+    window.location.href = '/local';
+  };
+
+  render() {
+    return (
+      <div className="btn-group">
+        <ToolbarButton
+          isActive={false}
+          label="回到主页"
+          icon="times"
+          onClick={this.onClick}
+        />
+      </div>
+    );
+  }
+}
+
+export { FileButton };
 export default LayoutButton;

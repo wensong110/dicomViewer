@@ -32,12 +32,15 @@ class OHIFDicomPDFViewport extends Component {
   static destroy() {
     console.log('DicomPDFViewport destroy()');
   }
-
+  
   componentDidMount() {
     const { displaySet, studies } = this.props.viewportData;
 
     if (displaySet.metadata && displaySet.metadata.EncapsulatedDocument) {
-      const { InlineBinary, BulkDataURI } = displaySet.metadata.EncapsulatedDocument;
+      const {
+        InlineBinary,
+        BulkDataURI,
+      } = displaySet.metadata.EncapsulatedDocument;
       if (InlineBinary) {
         const inlineBinaryData = atob(InlineBinary);
         const byteArray = str2ab(inlineBinaryData);
@@ -66,7 +69,7 @@ class OHIFDicomPDFViewport extends Component {
 
     return (
       <OHIFComponentPlugin {...pluginProps}>
-        {(byteArray) && (
+        {byteArray && (
           <DicomPDFViewport
             byteArray={byteArray}
             rawPdf={rawPdf}

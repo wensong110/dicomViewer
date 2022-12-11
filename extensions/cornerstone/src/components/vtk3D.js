@@ -363,7 +363,10 @@ class VTKFusionExample extends Component {
     return (
       <div style={{ height: '100%', width: '100%' }}>
         <div className="row">
-          <div className="col-xs-12">
+          <div
+            className="col-xs-12"
+            style={{ color: 'white', paddingLeft: '25px' }}
+          >
             <div>
               <select
                 id="select_CT_xfer_fn"
@@ -375,7 +378,7 @@ class VTKFusionExample extends Component {
             </div>
           </div>
           <div className="col-xs-12">
-            <h5 style={{ color: 'white', paddingLeft: '10px' }}>
+            <h5 style={{ color: 'white', paddingLeft: '25px' }}>
               {progressString}
             </h5>
           </div>

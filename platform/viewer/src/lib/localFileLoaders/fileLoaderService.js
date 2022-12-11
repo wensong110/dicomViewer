@@ -2,6 +2,7 @@ import cornerstoneWADOImageLoader from 'cornerstone-wado-image-loader';
 import FileLoader from './fileLoader';
 import PDFFileLoader from './pdfFileLoader';
 import DICOMFileLoader from './dicomFileLoader';
+import PNGFileLoader from './pngFileLoader';
 
 class FileLoaderService extends FileLoader {
   fileType;
@@ -22,7 +23,7 @@ class FileLoaderService extends FileLoader {
         const list = obj[listKey];
 
         // in case key not found, group it using counter
-        key = !!key ? key : '' + nonKeyCounter++;
+        key = key ? key : '' + nonKeyCounter++;
 
         if (!acc[key]) {
           acc[key] = { ...obj };
@@ -72,6 +73,8 @@ class FileLoaderService extends FileLoader {
   getLoader(fileType) {
     if (fileType === 'application/pdf') {
       return PDFFileLoader;
+    } else if (fileType === 'image/png') {
+      return PNGFileLoader;
     } else {
       // Default to dicom loader
       return DICOMFileLoader;

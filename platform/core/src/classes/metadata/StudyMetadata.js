@@ -131,7 +131,6 @@ class StudyMetadata extends Metadata {
     }
 
     const sopClassUIDs = getSopClassUIDs(series);
-
     if (sopClassHandlerModules && sopClassHandlerModules.length > 0) {
       const displaySet = _getDisplaySetFromSopClassModule(
         sopClassHandlerModules,

@@ -85,7 +85,7 @@ class MeasurementTable extends Component {
               data-cy="save-measurements-btn"
             >
               <Icon name="save" width="14px" height="14px" />
-              Save measurements
+              导出数据
             </button>
           )}
         </div>
@@ -188,7 +188,7 @@ class MeasurementTable extends Component {
     return timepoints.map((timepoint, index) => {
       return (
         <div key={index} className="measurementTableHeaderItem">
-          <div className="timepointLabel">{t(timepoint.key)}</div>
+          <div className="timepointLabel">{'序列时间'}</div>
           <div className="timepointDate">{timepoint.date}</div>
         </div>
       );

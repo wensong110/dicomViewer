@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import OHIFCornerstoneExtension from '@ohif/extension-cornerstone';
 import VTK3D from '../../../extensions/vtk-3d/index';
+import ImageView from '../../../extensions/dicom-image/index';
 import {
   SnackbarProvider,
   ModalProvider,
@@ -295,8 +296,11 @@ function _initExtensions(extensions, cornerstoneExtensionConfig, appConfig) {
     requiredExtensions.push(MeasurementsPanel);
   }
 
-  const mergedExtensions = requiredExtensions.concat(extensions).concat(VTK3D);
-  console.log(mergedExtensions)
+  const mergedExtensions = requiredExtensions
+    .concat(extensions)
+    .concat(VTK3D)
+    .concat(ImageView);
+  console.log(mergedExtensions);
   extensionManager.registerExtensions(mergedExtensions);
 }
 
