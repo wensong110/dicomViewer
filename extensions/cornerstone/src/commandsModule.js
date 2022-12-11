@@ -8,6 +8,7 @@ import setCornerstoneLayout from './utils/setCornerstoneLayout.js';
 import { getEnabledElement } from './state';
 import CornerstoneViewportDownloadForm from './CornerstoneViewportDownloadForm';
 import setMPRLayout from '../../vtk/src/utils/setMPRLayout';
+import { Input } from 'hammerjs';
 const scroll = cornerstoneTools.import('util/scroll');
 
 const { studyMetadataManager } = OHIF.utils;
@@ -23,6 +24,12 @@ const refreshCornerstoneViewports = () => {
 
 const commandsModule = ({ servicesManager }) => {
   const actions = {
+    openFile: () => {
+      console.log('file');
+    },
+    openFileFold: () => {
+      console.log('files');
+    },
     rotateViewport: ({ viewports, rotation }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
 
@@ -417,6 +424,16 @@ const commandsModule = ({ servicesManager }) => {
     setWindowLevel: {
       commandFn: actions.setWindowLevel,
       storeContexts: ['viewports'],
+      options: {},
+    },
+    openFile: {
+      commandFn: actions.openFile,
+      storeContexts: [],
+      options: {},
+    },
+    openFileFold: {
+      commandFn: actions.openFileFold,
+      storeContexts: [],
       options: {},
     },
   };

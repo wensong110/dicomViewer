@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import BackToHomeButton from "../../../../extensions/clientControl/index"
+import BackToHomeButton, {
+  FileButton,
+} from '../../../../extensions/clientControl/index';
 import { MODULE_TYPES } from '@ohif/core';
 import {
   ExpandableToolMenu,
@@ -33,6 +35,7 @@ class ToolbarRow extends Component {
     // NOTE: withDialog, withModal HOCs
     dialog: PropTypes.any,
     modal: PropTypes.any,
+    changeFile: PropTypes.func,
   };
 
   static defaultProps = {
@@ -224,7 +227,8 @@ class ToolbarRow extends Component {
           </div>
           {buttonComponents}
           <ConnectedLayoutButton />
-          <BackToHomeButton/>
+          <FileButton changeFile={this.props.changeFile} />
+          <BackToHomeButton />
           <div
             className="pull-right m-t-1 rm-x-1"
             style={{ marginLeft: 'auto' }}

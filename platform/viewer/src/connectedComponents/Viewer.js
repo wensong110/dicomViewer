@@ -65,6 +65,7 @@ class Viewer extends Component {
     activeViewportIndex: PropTypes.number.isRequired,
     isStudyLoaded: PropTypes.bool,
     dialog: PropTypes.object,
+    changeFile: PropTypes.func,
   };
 
   constructor(props) {
@@ -339,6 +340,7 @@ class Viewer extends Component {
         {/* TOOLBAR */}
         <ErrorBoundaryDialog context="ToolbarRow">
           <ToolbarRow
+            changeFile={this.props.changeFile}
             activeViewport={
               this.props.viewports[this.props.activeViewportIndex]
             }

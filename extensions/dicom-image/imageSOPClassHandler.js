@@ -34,7 +34,6 @@ const imageSopClassHandler = {
       SeriesNumber,
       metadata,
       authorizationHeaders: authorizationHeaders,
-      imagePreview: study.getFirstImageId(),
     };
   },
 };

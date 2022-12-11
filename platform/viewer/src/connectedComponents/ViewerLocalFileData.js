@@ -95,10 +95,9 @@ class ViewerLocalFileData extends Component {
   render() {
     const onDrop = async acceptedFiles => {
       this.setState({ loading: true });
-
+      this.setState({ studies: null });
       const studies = await filesToStudies(acceptedFiles);
       const updatedStudies = this.updateStudies(studies);
-
       if (!updatedStudies) {
         return;
       }
@@ -121,6 +120,7 @@ class ViewerLocalFileData extends Component {
                   this.state.studies &&
                   this.state.studies.map(a => a.StudyInstanceUID)
                 }
+                changeFile={onDrop}
               />
             ) : (
               <div className={'drag-drop-instructions'}>
