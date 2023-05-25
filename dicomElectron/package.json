@@ -1,0 +1,22 @@
+{
+  "name": "dicomelectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-packager . dicomCompareViewer --win --out ./release --arch=x64 --app-version=0.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.9",
+    "ajax": "^0.0.4",
+    "electron-packager": "^17.1.1"
+  }
+}

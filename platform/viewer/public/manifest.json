@@ -1,9 +1,9 @@
 {
-  "name": "OHIF Viewer",
+  "name": "尘肺病阅片和比对系统",
   "short_name": "Viewer",
-  "description": "OHIF Viewer",
+  "description": "dicom Viewer",
   "dir": "auto",
-  "lang": "en-US",
+  "lang": "zh-CN",
   "orientation": "any",
   "icons": [
     {
